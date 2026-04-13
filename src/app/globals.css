@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-rev-dark text-rev-white font-body antialiased;
+    letter-spacing: 0.16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium m-0;
+  }
+}
+
+@layer components {
+  .btn-ghost {
+    @apply bg-transparent text-rev-white border-2 border-rev-white rounded-full px-8 py-[14px] font-display font-medium text-[20px] transition-all cursor-pointer;
+  }
+  
+  .btn-ghost:hover {
+    @apply opacity-85;
+  }
+
+  .btn-ghost.active {
+    @apply bg-rui-blue border-rui-blue text-rev-white;
+  }
+}

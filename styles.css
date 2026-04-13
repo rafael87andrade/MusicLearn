@@ -1,0 +1,272 @@
+:root {
+    /* Revolut Design Tokens */
+    --rev-dark: #191c1f;
+    --rev-white: #ffffff;
+    --rev-surface: #f4f4f4;
+    --rev-ghost: rgba(244, 244, 244, 0.1);
+    
+    /* Semantic Colors */
+    --rui-blue: #494fdf;
+    --rui-teal: #00a87e;
+    --rui-deep-pink: #e61e49;
+    --rui-warning: #ec7e00;
+    --rui-yellow: #b09000;
+    --rui-light-blue: #007bc2;
+
+    /* Typographic System */
+    --font-display: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--rev-dark);
+    color: var(--rev-white);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    margin: 0;
+}
+
+.app-header {
+    padding: 48px 32px 32px;
+    text-align: center;
+}
+
+.app-header h1 {
+    font-size: 80px; /* Display Hero */
+    line-height: 1.0;
+    letter-spacing: -1.2px;
+    margin-bottom: 24px;
+}
+
+.app-header .subtitle {
+    font-size: 24px;
+    color: #c9c9cd;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.app-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 0 32px 120px;
+}
+
+@media (max-width: 1024px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    .app-header h1 {
+        font-size: 48px;
+        letter-spacing: -0.48px;
+    }
+}
+
+.circle-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.circle-container {
+    width: 480px;
+    height: 480px;
+    position: relative;
+    user-select: none;
+}
+
+.circle-svg {
+    border-radius: 50%;
+    overflow: visible;
+}
+
+.wedge {
+    cursor: pointer;
+    transition: fill 0.2s ease, stroke-width 0.2s ease;
+}
+
+.wedge:hover {
+    fill: #505a63;
+}
+
+.wedge.active {
+    fill: var(--rev-white);
+}
+
+.wedge.subdominant {
+    fill: var(--rui-blue);
+}
+
+.wedge.dominant {
+    fill: var(--rui-teal);
+}
+
+.wedge-text {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 16px;
+    fill: var(--rev-white);
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    letter-spacing: -0.02em;
+    transition: fill 0.2s ease;
+}
+
+.wedge-text-inner {
+    font-size: 13px;
+    fill: #c9c9cd;
+}
+
+.wedge.active .wedge-text,
+.wedge.active .wedge-text-inner {
+    fill: var(--rev-dark);
+}
+
+/* Buttons */
+button {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--rev-white);
+    border: 2px solid var(--rev-white);
+    border-radius: 9999px;
+    padding: 14px 32px;
+}
+
+.btn-ghost.active {
+    background-color: var(--rui-blue);
+    border-color: var(--rui-blue);
+    color: var(--rev-white);
+}
+
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.info-panel h2 {
+    font-size: 48px;
+    line-height: 1.21;
+    letter-spacing: -0.48px;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.info-panel h2.placeholder {
+    color: #505a63;
+}
+
+.stats-grid, .neighbors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.stat-box, .neighbor-box {
+    background-color: var(--rev-ghost);
+    padding: 24px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.stat-box span, .neighbor-box span {
+    font-size: 16px;
+    color: #c9c9cd;
+    letter-spacing: 0.16px;
+}
+
+.stat-box strong, .neighbor-box strong {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.32px;
+}
+
+.neighbor-box strong {
+    font-size: 24px;
+}
+
+/* Highlights the neighbor boxes */
+#box-sub.active-box {
+    background-color: var(--rui-blue);
+}
+#box-sub.active-box span, #box-sub.active-box strong {
+    color: var(--rev-white);
+}
+
+#box-dom.active-box {
+    background-color: var(--rui-teal);
+}
+#box-dom.active-box span, #box-dom.active-box strong {
+    color: var(--rev-white);
+}
+
+.card {
+    background-color: var(--rev-ghost);
+    padding: 32px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card h3 {
+    font-size: 32px;
+    letter-spacing: -0.32px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #c9c9cd;
+    margin: 0;
+}
+
+.tip {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.24px;
+    background-color: var(--rev-dark); /* Contrast inside card */
+    padding: 16px;
+    border-radius: 12px;
+}
+.tip strong {
+    font-weight: 600;
+    color: var(--rev-white);
+}
+.tip small {
+    color: #8d969e;
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+}
+
+.hidden {
+    display: none !important;
+}

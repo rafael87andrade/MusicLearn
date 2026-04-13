@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculo de Quintas Interativo</title>
+    <!-- Font Inter para reproduzir as proporções fluidas e legibilidade do design system -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Círculo de Quintas</h1>
+        <p class="subtitle">Seu GPS Harmônico</p>
+    </header>
+    <main class="app-container">
+        <div class="circle-panel">
+            <div id="circle-container" class="circle-container">
+                <!-- SVG gerado dinamicamente via script.js -->
+            </div>
+            <div class="controls">
+                <button id="toggle-audio" class="btn-ghost" data-state="off">Som: Desativado</button>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h2 id="key-title" class="placeholder">Selecione uma tonalidade</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span>Acidentes</span>
+                    <strong id="key-accidents">-</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Relativa Menor</span>
+                    <strong id="key-relative">-</strong>
+                </div>
+            </div>
+            <div class="neighbors">
+                <div class="neighbor-box" id="box-sub">
+                    <span>Subdominante (IV)</span>
+                    <strong id="key-sub">-</strong>
+                </div>
+                <div class="neighbor-box" id="box-dom">
+                    <span>Dominante (V)</span>
+                    <strong id="key-dom">-</strong>
+                </div>
+            </div>
+
+            <div class="tips-section card">
+                <h3>Dicas Práticas</h3>
+                <p>Para memorizar a ordem dos acidentes:</p>
+                <div class="tip">
+                    <strong>Sustenidos (#):</strong> Fá, Dó, Sol, Ré, Lá, Mi, Si<br>
+                    <small>Fátima Disse Gue Recife Ama Muito Sol</small>
+                </div>
+                <div class="tip">
+                    <strong>Bemóis (b):</strong> Si, Mi, Lá, Ré, Sol, Dó, Fá<br>
+                    <small>Sim, Minha Linda Rege Só Doze Flautas</small>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
