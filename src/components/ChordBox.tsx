@@ -17,12 +17,7 @@ export default function ChordBox({ name, frets, hideBadge, capoFret = 0, realNam
   const minFret = validFrets.length > 0 ? Math.min(...validFrets) : 0;
   
   const offset = minFret > 2 ? minFret - 1 : 0;
-  const isOpen = frets.some(f => f === 0);
-  
-  let typeBadge = "Acorde";
-  if (isOpen) typeBadge = "Acorde Aberto";
-  else if (offset > 0) typeBadge = "Pestana";
-  else if (validFrets.length > 0) typeBadge = "Acorde Fechado";
+
 
   const tabNotation = frets.map(f => f === null ? 'x' : f).join(validFrets.some(f => f >= 10) ? '-' : '');
 
@@ -100,12 +95,7 @@ export default function ChordBox({ name, frets, hideBadge, capoFret = 0, realNam
       </svg>
       
       {/* Badge inferior inspirado no design da captura */}
-      {!hideBadge && (
-        <div className={`mt-6 px-4 py-1.5 text-xs rounded-full font-bold font-display tracking-wide
-          ${isOpen ? 'bg-[#ffffff]/10 text-[#ffffff] border border-[#ffffff]/30' : 'bg-[#8d969e]/10 text-[#8d969e] border border-[#8d969e]/30'}`}>
-           {typeBadge}
-        </div>
-      )}
+
     </div>
   );
 }
